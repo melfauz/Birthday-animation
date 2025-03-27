@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday to Wasil Mawardi❤</title>
+    <style>
+        body {
+            background-color: #ffccff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 40px;
+            color: #ff3399;
+        }
+        .prayer, .self-reward {
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        .cake {
+            width: 150px;
+            height: 200px;
+            background-color: #ff6600;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+            animation: fadeOut 5s ease-in-out forwards;
+        }
+        .candle {
+            width: 10px;
+            height: 40px;
+            background-color: red;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flame {
+            width: 10px;
+            height: 20px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.5s infinite alternate;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        .balloon, .heart {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50%;
+            animation: float 5s linear infinite;
+        }
+        .heart {
+            width: 30px;
+            height: 30px;
+            background-color: pink;
+            transform: rotate(-45deg);
+            position: absolute;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: pink;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -15px;
+            left: 0;
+        }
+        .heart::after {
+            left: 15px;
+            top: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-800px); }
+        }
+        @keyframes fireworks {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
+            border-radius: 50%;
+            animation: fireworks 1s ease-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="cake">
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Selamat Ulang Tahun Wasil Mawardi❤!</h1>
+        <h2>Selamat bertemu kembali dengan 28 Maret - Selamat beranjak di 22!</h2>
+        <p class="prayer">Semoga Allah memberkahi usiamu, melimpahkan rezeki yang mengalir sederas air yang selalu memberikan keberkahan, semoga selalu dikelilingi oleh hal-hal baik yang mengundang kebahagiaan, dan sukses mimpi-mimpimu. Aamiin.</p>
+        <p class="self-reward">Terima kasih, kamu sudah berjuang sejauh ini dan melakukan yang terbaik untuk dirimu sendiri. Teruslah melangkah, menoreh cerita indah.</p>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.querySelector(".cake").style.display = "none";
+        }, 5000);
+        function createBalloon() {
+            let balloon = document.createElement("div");
+            balloon.classList.add("balloon");
+            balloon.style.left = Math.random() * window.innerWidth + "px";
+            balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(balloon);
+            setTimeout(() => {
+                balloon.remove();
+            }, 5000);
+        }
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        function createFirework() {
+            let firework = document.createElement("div");
+            firework.classList.add("firework");
+            firework.style.left = Math.random() * window.innerWidth + "px";
+            firework.style.top = Math.random() * window.innerHeight + "px";
+            firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(firework);
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+        setInterval(createBalloon, 500);
+        setInterval(createHeart, 700);
+        setInterval(createFirework, 1000);
+    </script>
+</body>
+</html>
